@@ -5,29 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import com.mailsonribeiro.desafioapi.R
+import com.mailsonribeiro.desafioapi.detalhe.model.MiniaturaModel
+import com.mailsonribeiro.desafioapi.listagem.model.ImagemModel
+import com.mailsonribeiro.desafioapi.listagem.view.HomeFragment
+import com.squareup.picasso.Picasso
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -38,23 +29,36 @@ class DetailFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val descircao = arguments?.getString(HomeFragment.COMICS_DESCRICAO)
+        val titulo = arguments?.getString(HomeFragment.COMICS_TITULO)
+        val datas = arguments?.get(HomeFragment.COMICS_DATAS)
+        val precos = arguments?.get(HomeFragment.COMICS_PRECO)
+        val imagens = arguments?.get(HomeFragment.COMICS_IMAGENS) as List<ImagemModel>
+        val miniatura = arguments?.getString(HomeFragment.COMICS_MINIATURA)
+
+
+        val imagemMiniatura = view.findViewById<ImageView>(R.id.ivImagemMiniatura)
+        val imagemLandscape = view.findViewById<ImageView>(R.id.ivImageViewLandscape)
+        val imagemBack = view.findViewById<ImageView>(R.id.ivBackDetalhe)
+
+        var navController = Navigation.findNavController(view)
+
+        Picasso.get().load(miniatura).into(imagemMiniatura)
+        var path =imagens[imagens.size-1].getImagePath("landscape_incredible")
+
+        Picasso.get().load(path).into(imagemLandscape)
+
+        imagemBack.setOnClickListener {
+            navController.popBackStack()
+        }
+        imagemMiniatura.setOnClickListener {
+            val bundle = bundleOf(
+                HomeFragment.COMICS_MINIATURA to miniatura
+            )
+            navController.navigate(R.id.fullScreenFragment,bundle)
+        }
+
     }
 }

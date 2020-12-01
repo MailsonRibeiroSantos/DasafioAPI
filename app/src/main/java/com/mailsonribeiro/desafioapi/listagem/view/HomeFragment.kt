@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.Navigation
@@ -47,7 +48,16 @@ class HomeFragment : Fragment() {
 
         _listaComics = mutableListOf<ComicsModel>()
         _listaAdapter = ComicAdapter(_listaComics){
-            navController.navigate(R.id.detailFragment)
+
+            val bundle = bundleOf(COMICS_ID to it.id,
+                    COMICS_DESCRICAO to it.descricao,
+                    COMICS_PRECO to it.precos,
+                    COMICS_IMAGENS to it.imagens,
+                    COMICS_MINIATURA to it.miniatura.getImagePath("detail"),
+                    COMICS_DATAS to it.datas,
+                    COMICS_TITULO to it.titulo
+            )
+            navController.navigate(R.id.detailFragment,bundle)
         }
 
         lista.apply {
@@ -69,8 +79,25 @@ class HomeFragment : Fragment() {
     }
 
     private fun exibirResultados(lista: List<ComicsModel>?) {
-        lista?.let { _listaComics.addAll(it) }
+        var comics = mutableListOf<ComicsModel>()
+        for ( item in lista!!){
+            if(!("available" in item.miniatura.pathMini)){
+                comics.add(item)
+            }
+        }
+        comics?.let { _listaComics.addAll(it) }
 
         _listaAdapter.notifyDataSetChanged()
+    }
+
+
+    companion object {
+        const val COMICS_ID = "COMICS_ID"
+        const val COMICS_DESCRICAO = "COMICS_DESCRICAO"
+        const val COMICS_PRECO = "COMICS_PRECO"
+        const val COMICS_IMAGENS = "COMICS_IMAGEM"
+        const val COMICS_MINIATURA = "COMICS_MINIATURA"
+        const val COMICS_DATAS = "COMICS_DATAS"
+        const val COMICS_TITULO = "COMICS_TITLO"
     }
 }

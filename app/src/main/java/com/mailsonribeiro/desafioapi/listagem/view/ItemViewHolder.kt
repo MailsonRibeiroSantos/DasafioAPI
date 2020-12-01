@@ -13,10 +13,13 @@ class ItemViewHolder (view: View): RecyclerView.ViewHolder(view) {
     private val imagem = view.findViewById<ImageView>(R.id.ivImageCard)
 
     fun bind(comicsModel: ComicsModel){
-        numero.text = "# ${comicsModel.id}"
-
         val path = comicsModel.miniatura.getImagePath("detail")
-        Picasso.get().load(path).into(imagem)
+
+            numero.text = "# ${comicsModel.id}"
+
+
+            Picasso.get().load(path).into(imagem)
+
     }
 
 }
