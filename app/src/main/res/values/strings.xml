@@ -6,4 +6,9 @@
     <string name="page">Page:</string>
     <string name="price">Price</string>
     <string name="published">Published:</string>
+    <string name="save">SAVE</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="name">name</string>
+    <string name="register">Register</string>
 </resources>

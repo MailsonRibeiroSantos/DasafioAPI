@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".register.RegisterFragment">
 
-<androidx.appcompat.widget.Toolbar
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary"
-    />
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/ivBackToolbar"
+            android:layout_width="@dimen/dim_30_dp"
+            android:layout_height="@dimen/dim_30_dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dim_20_dp"
+            android:textSize="@dimen/dim_10_pt"
+            android:textColor="@color/white"
+            android:text="@string/register"/>
+    </androidx.appcompat.widget.Toolbar>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,10 +33,10 @@
             android:id="@+id/cardViewLogin"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="120dp"
+            android:layout_marginStart="@dimen/dim_24_dp"
+            android:layout_marginTop="@dimen/dim_140_dp"
+            android:layout_marginEnd="@dimen/dim_24_dp"
+            android:layout_marginBottom="@dimen/dim_120_dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,18 +51,18 @@
                 android:id="@+id/cardViewLoginBottonrRegister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="@dimen/dim_60_dp"
                 android:backgroundTint="@color/white"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="@dimen/dim_10_dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="8dp">
+                    android:padding="@dimen/dim_8_dp">
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="email"
+                        android:hint="@string/name"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:errorEnabled="true">
 
@@ -65,7 +77,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="email"
+                        android:hint="@string/email"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:errorEnabled="true">
 
@@ -81,7 +93,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="password"
+                        android:hint="@string/password"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:errorEnabled="true"
                         >
@@ -96,13 +108,13 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnLoginLogin"
+                        android:id="@+id/btnLoginRegister"
                         android:layout_marginTop="14dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         app:cornerRadius="10dp"
-                        android:text="SAVE"/>
+                        android:text="@string/save"/>
 
 
 
@@ -112,19 +124,19 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/dim_100_dp"
+            android:layout_height="@dimen/dim_100_dp"
             android:backgroundTint="@color/colorBackground"
-            app:cardCornerRadius="50dp"
-            android:layout_marginTop="100dp"
+            app:cardCornerRadius="@dimen/dim_50_dp"
+            android:layout_marginTop="@dimen/dim_100_dp"
             app:layout_constraintBottom_toTopOf="@+id/cardViewLoginBotton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/dim_60_dp"
+                android:layout_height="@dimen/dim_60_dp"
                 android:layout_gravity="center"
                 android:src="@drawable/user">
             </ImageView>

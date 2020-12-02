@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:layout_margin="10dp"
+    android:layout_marginTop="@dimen/dim_16_dp"
+    android:layout_margin="@dimen/dim_10_dp"
     android:backgroundTint="@color/colorOnPrimary"
     android:clickable="true">
     <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/dim_120_dp"
+        android:layout_height="@dimen/dim_200_dp"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="@dimen/dim_10_dp">
     <ImageView
         android:id="@+id/ivImageCard"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/dim_150_dp"
         />
 
     <TextView
@@ -24,8 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="8pt"
-        android:layout_marginTop="8dp"
+        android:textSize="@dimen/dim_8_pt"
+        android:layout_marginTop="@dimen/dim_8_dp"
         android:fontFamily="sans-serif"
         android:layout_gravity="center"
         android:maxLines="1"

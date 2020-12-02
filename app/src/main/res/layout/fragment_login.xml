@@ -14,24 +14,24 @@
             android:id="@+id/cardViewLogin"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="120dp"
+            android:layout_marginStart="@dimen/dim_24_dp"
+            android:layout_marginTop="@dimen/dim_140_dp"
+            android:layout_marginEnd="@dimen/dim_24_dp"
+            android:layout_marginBottom="@dimen/dim_120_dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints"
             android:backgroundTint="@color/colorPrimary"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="@dimen/dim_10_dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10pt"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
+                android:textSize="@dimen/dim_10_pt"
+                android:layout_marginTop="@dimen/dim_10_dp"
+                android:layout_marginStart="@dimen/dim_10_dp"
                 android:textColor="@color/white"
                 android:text="@string/welcome_to_the_marvel">
 
@@ -41,18 +41,18 @@
                 android:id="@+id/cardViewLoginBotton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="@dimen/dim_60_dp"
                 android:backgroundTint="@color/white"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="@dimen/dim_10_dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="8dp">
+                    android:padding="@dimen/dim_8_dp">
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/dim_20_dp"
                     android:hint="email"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:errorEnabled="true">
@@ -86,20 +86,20 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLoginLogin"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="@dimen/dim_28_dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/dim_10_dp"
                     android:text="LOG IN"/>
 
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRegisterLogin"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="@dimen/dim_30_dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cornerRadius="10dp"
+                    app:cornerRadius="@dimen/dim_10_dp"
                     android:textColor="@color/colorBtn"
                     android:text="Create account"
                     style="@style/Widget.MaterialComponents.Button.TextButton"/>
