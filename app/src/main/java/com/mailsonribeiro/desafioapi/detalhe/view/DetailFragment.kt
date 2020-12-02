@@ -1,5 +1,6 @@
 package com.mailsonribeiro.desafioapi.detalhe.view
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,15 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import com.mailsonribeiro.desafioapi.R
-import com.mailsonribeiro.desafioapi.detalhe.model.MiniaturaModel
 import com.mailsonribeiro.desafioapi.detalhe.model.PrecoModel
 import com.mailsonribeiro.desafioapi.listagem.model.DataModel
 import com.mailsonribeiro.desafioapi.listagem.model.ImagemModel
 import com.mailsonribeiro.desafioapi.listagem.view.HomeFragment
 import com.squareup.picasso.Picasso
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class DetailFragment : Fragment() {
@@ -32,6 +35,7 @@ class DetailFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val descircao = arguments?.getString(HomeFragment.COMICS_DESCRICAO)
@@ -87,6 +91,7 @@ class DetailFragment : Fragment() {
             tvPriceDetail.text = "$ " + precos[0].preco.toString()
         }
         if (datas != null) {
+
             tvPublishedDetail.text =  datas[0].data
         }
 
