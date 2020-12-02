@@ -15,7 +15,7 @@ class ComicsModel(@SerializedName("id")
                   @SerializedName("description")
                    val descricao: String,
                   @SerializedName("pageCount")
-                   val paginacao: Int,
+                   val pagina: Int,
                   @SerializedName("dates")
                    val datas: List<DataModel>,
                   @SerializedName("prices")

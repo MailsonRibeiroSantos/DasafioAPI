@@ -55,6 +55,7 @@ class HomeFragment : Fragment() {
                     COMICS_IMAGENS to it.imagens,
                     COMICS_MINIATURA to it.miniatura.getImagePath("detail"),
                     COMICS_DATAS to it.datas,
+                    COMICS_PAGE to it.pagina,
                     COMICS_TITULO to it.titulo
             )
             navController.navigate(R.id.detailFragment,bundle)
@@ -99,5 +100,6 @@ class HomeFragment : Fragment() {
         const val COMICS_MINIATURA = "COMICS_MINIATURA"
         const val COMICS_DATAS = "COMICS_DATAS"
         const val COMICS_TITULO = "COMICS_TITLO"
+        const val COMICS_PAGE = "COMICS_PAGE"
     }
 }
