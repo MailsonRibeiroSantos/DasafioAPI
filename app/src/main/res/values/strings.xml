@@ -11,4 +11,8 @@
     <string name="email">email</string>
     <string name="name">name</string>
     <string name="register">Register</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="log_in">LOG IN</string>
+    <string name="create_account">Create account</string>
 </resources>

@@ -53,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dim_20_dp"
-                    android:hint="email"
+                    android:hint="@string/email"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:errorEnabled="true">
 
@@ -70,7 +70,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="password"
+                    android:hint="@string/password"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:errorEnabled="true"
                     >
@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     app:cornerRadius="@dimen/dim_10_dp"
-                    android:text="LOG IN"/>
+                    android:text="@string/log_in"/>
 
 
                 <com.google.android.material.button.MaterialButton
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     app:cornerRadius="@dimen/dim_10_dp"
                     android:textColor="@color/colorBtn"
-                    android:text="Create account"
+                    android:text="@string/create_account"
                     style="@style/Widget.MaterialComponents.Button.TextButton"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
