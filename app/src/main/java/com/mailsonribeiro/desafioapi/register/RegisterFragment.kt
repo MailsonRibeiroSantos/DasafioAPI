@@ -14,11 +14,6 @@ import com.mailsonribeiro.desafioapi.R
 class RegisterFragment : Fragment() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var navController = Navigation.findNavController(view)

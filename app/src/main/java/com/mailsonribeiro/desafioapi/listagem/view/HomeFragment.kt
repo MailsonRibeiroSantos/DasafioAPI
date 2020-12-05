@@ -24,9 +24,6 @@ class HomeFragment : Fragment() {
     private lateinit var _listaAdapter: ComicAdapter
 
     private var _listaComics = mutableListOf<ComicsModel>()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -86,7 +83,7 @@ class HomeFragment : Fragment() {
                 comics.add(item)
             }
         }
-        comics?.let { _listaComics.addAll(it) }
+        comics.let { _listaComics.addAll(it) }
 
         _listaAdapter.notifyDataSetChanged()
     }
